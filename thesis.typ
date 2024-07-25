@@ -16,6 +16,7 @@
   abstract_en: include "/content/abstract_en.typ",
   abstract_de: include "/content/abstract_de.typ",
   acknowledgement: include "/content/acknowledgement.typ",
+  confidential_clause: include "/content/confidential_clause.typ",
   transparency_ai_tools: include "/content/transparency_ai_tools.typ",
 )
 
