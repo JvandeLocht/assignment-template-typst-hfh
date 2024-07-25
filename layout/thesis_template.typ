@@ -15,6 +15,7 @@
   supervisor: "",
   advisors: (),
   author: "",
+  matriculationNumber: "",
   startDate: datetime,
   submissionDate: datetime,
   abstract_en: "",
@@ -48,28 +49,41 @@
 
   print_page_break(print: is_print, to: "even")
 
-  disclaimer(
-    title: title,
-    degree: degree,
-    author: author,
-    submissionDate: submissionDate
-  )
+  // disclaimer(
+  //   title: title,
+  //   degree: degree,
+  //   author: author,
+  //   submissionDate: submissionDate
+  // )
   confidential_clause_layout(confidential_clause)
-  transparency_ai_tools_layout(transparency_ai_tools)
 
-  print_page_break(print: is_print)
+  // print_page_break(print: is_print)
   
-  acknowledgement_layout(acknowledgement)
+  // acknowledgement_layout(acknowledgement)
 
   print_page_break(print: is_print)
 
-  abstract(lang: "en")[#abstract_en]
-  abstract(lang: "de")[#abstract_de]
+  // abstract(lang: "en")[#abstract_en]
+  // abstract(lang: "de")[#abstract_de]
+
 
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
-    numbering: "1",
-    number-align: center,
+    number-align: right,
+    header: stack(
+      dir: ttb,
+      spacing: 0.5em,
+      author + [#h(1fr) Matrikelnummer: ] + matriculationNumber,
+      line(length: 100%, stroke: 0.5pt)
+    ),
+  footer: 
+    stack(
+      dir: ttb,
+      spacing: 0.5em,
+      line(length: 100%, stroke: 0.5pt),
+      align(right)[#counter(page).display("I")]
+    )
+  ,
   )
 
   let body-font = "New Computer Modern"
@@ -109,11 +123,12 @@
 
   // --- Figures ---
   show figure: set text(size: 0.85em)
-  
+
   // --- Table of Contents ---
+  counter(page).update(1)
   outline(
     title: {
-      text(font: body-font, 1.5em, weight: 700, "Contents")
+      text(font: body-font, 1.5em, weight: 700, "Inhaltsverzeichnis")
       v(15mm)
     },
     indent: 2em
@@ -125,6 +140,25 @@
 
 
   // Main body.
+  set page(
+    margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
+    number-align: right,
+    header: stack(
+      dir: ttb,
+      spacing: 0.5em,
+      author + [#h(1fr) Matrikelnummer: ] + matriculationNumber,
+      line(length: 100%, stroke: 0.5pt)
+    ),
+  footer: 
+    stack(
+      dir: ttb,
+      spacing: 0.5em,
+      line(length: 100%, stroke: 0.5pt),
+      align(right)[#counter(page).display()]
+    )
+  ,
+  )
+  set page(numbering: "1")
   set par(justify: true, first-line-indent: 2em)
 
   body
@@ -152,4 +186,5 @@
 
   pagebreak()
   bibliography("/thesis.bib")
+  transparency_ai_tools_layout(transparency_ai_tools)
 }

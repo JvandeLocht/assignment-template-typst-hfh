@@ -11,6 +11,7 @@
   supervisor: supervisor,
   advisors: advisors,
   author: author,
+  matriculationNumber: matriculationNumber,
   startDate: startDate,
   submissionDate: submissionDate,
   abstract_en: include "/content/abstract_en.typ",
