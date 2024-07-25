@@ -24,13 +24,12 @@
   
   // --- Cover ---
   v(1cm)
-  align(center, image("../figures/tum_logo.png", width: 26%))
+  align(center, image("../figures/hfh_logo.jpg", width: 26%))
 
   v(5mm)
-  align(center, text(font: sans-font, 2em, weight: 700, "Technical University of Munich"))
+  align(center, text(font: sans-font, 2em, weight: 700, "Hamburger Fern-Hochschule"))
 
   v(5mm)
-  align(center, text(font: sans-font, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Informatics --"))
   
   v(15mm)
 
