@@ -2,8 +2,8 @@
 #let titleEnglish = "(Title English)"
 #let titleGerman = "(Title German)"
 #let degree = "Bachelor"
-#let program = "Information Systems"
 #let company = "Firma xyz"
+#let program = "Mechanical Engineering"
 #let supervisor = "Prof. Dr. Stephan Krusche"
 #let advisors = ("Jolanda Krümelmonster, M.Sc.",)
 #let author = "(Author)"
