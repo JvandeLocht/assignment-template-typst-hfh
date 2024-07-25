@@ -30,6 +30,7 @@
   align(center, text(font: sans-font, 2em, weight: 700, "Hamburger Fern-Hochschule"))
 
   v(5mm)
+  align(center, text(font: sans-font, 1.5em, weight: 100, "University of applied sciences"))
   
   v(15mm)
 
