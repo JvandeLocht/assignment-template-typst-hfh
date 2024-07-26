@@ -127,7 +127,7 @@
   
   v(2.4fr)
 
-  // List of figures.
+  // --- List of figures ---
   pagebreak()
   heading(numbering: none)[Abbildungsverzeichnis]
   outline(
@@ -135,7 +135,7 @@
     target: figure.where(kind: image),
   )
 
-  // List of tables.
+  // --- List of tables ---
   pagebreak()
   heading(numbering: none)[Tabellenverzeichnis]
   outline(
@@ -148,26 +148,28 @@
   heading(numbering: none)[Abkürzungsverzeichnis]
   print-index(title: "") 
 
-  // Main body.
+  // --- Main body ---
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     number-align: right,
     numbering: "1"
   )
   set par(justify: true, first-line-indent: 2em)
-
   body
 
-
-  // Appendix.
+  // --- Quellenverzeichnis ---
   pagebreak()
-  heading(numbering: none)[Appendix A: Supplementary Material]
+  bibliography("/thesis.bib", title:"Quellenverzeichnis")
+
+  // --- Appendix ---
+  pagebreak()
+  heading(numbering: none)[Anlagenverzeichnis]
   include("/layout/appendix.typ")
 
-  pagebreak()
-  bibliography("/thesis.bib")
+  // --- transparency_ai_tools ---
   transparency_ai_tools_layout(transparency_ai_tools)
 
+  // --- Eigenständigkeitserklärung ---
   set page(
     margin: (left: 5mm, right: 5mm, top: 5mm, bottom: 5mm),
     header: "",
