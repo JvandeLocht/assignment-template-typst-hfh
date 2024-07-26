@@ -70,20 +70,7 @@
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     number-align: right,
-    header: stack(
-      dir: ttb,
-      spacing: 0.5em,
-      author + [#h(1fr) Matrikelnummer: ] + matriculationNumber,
-      line(length: 100%, stroke: 0.5pt)
-    ),
-  footer: 
-    stack(
-      dir: ttb,
-      spacing: 0.5em,
-      line(length: 100%, stroke: 0.5pt),
-      align(right)[#counter(page).display("I")]
-    )
-  ,
+    header: author + [#h(1fr) Matrikelnummer: ] + matriculationNumber,
   )
 
   let body-font = "New Computer Modern"
@@ -125,6 +112,7 @@
   show figure: set text(size: 0.85em)
 
   // --- Table of Contents ---
+  set page(numbering: "I")
   counter(page).update(1)
   outline(
     title: {
@@ -136,36 +124,10 @@
   
   
   v(2.4fr)
-  pagebreak()
-
-
-  // Main body.
-  set page(
-    margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
-    number-align: right,
-    header: stack(
-      dir: ttb,
-      spacing: 0.5em,
-      author + [#h(1fr) Matrikelnummer: ] + matriculationNumber,
-      line(length: 100%, stroke: 0.5pt)
-    ),
-  footer: 
-    stack(
-      dir: ttb,
-      spacing: 0.5em,
-      line(length: 100%, stroke: 0.5pt),
-      align(right)[#counter(page).display()]
-    )
-  ,
-  )
-  set page(numbering: "1")
-  set par(justify: true, first-line-indent: 2em)
-
-  body
 
   // List of figures.
   pagebreak()
-  heading(numbering: none)[List of Figures]
+  heading(numbering: none)[Abbildungsverzeichnis]
   outline(
     title:"",
     target: figure.where(kind: image),
@@ -173,11 +135,22 @@
 
   // List of tables.
   pagebreak()
-  heading(numbering: none)[List of Tables]
+  heading(numbering: none)[Tabellenverzeichnis]
   outline(
     title: "",
     target: figure.where(kind: table)
   )
+
+  // Main body.
+  set page(
+    margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
+    number-align: right,
+    numbering: "1"
+  )
+  set par(justify: true, first-line-indent: 2em)
+
+  body
+
 
   // Appendix.
   pagebreak()
