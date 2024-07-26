@@ -167,4 +167,11 @@
   pagebreak()
   bibliography("/thesis.bib")
   transparency_ai_tools_layout(transparency_ai_tools)
+
+  set page(
+    margin: (left: 5mm, right: 5mm, top: 5mm, bottom: 5mm),
+    header: "",
+    numbering: none
+  )
+  image("/figures/Eigenständigkeitserklärung.svg")
 }
