@@ -5,6 +5,7 @@
 #import "/layout/confidential_clause.typ": confidential_clause as confidential_clause_layout
 #import "/layout/transparency_ai_tools.typ": transparency_ai_tools as transparency_ai_tools_layout
 #import "/layout/abstract.typ": *
+#import "/layout/acronyms.typ": *
 #import "/utils/print_page_break.typ": *
 
 #let thesis(
@@ -25,6 +26,7 @@
   transparency_ai_tools: "",
   is_print: false,
   body,
+  init-acronyms: (()),
 ) = {
   cover(
     title: title,
@@ -140,6 +142,11 @@
     title: "",
     target: figure.where(kind: table)
   )
+
+  // --- list of acronyms ---
+  pagebreak()
+  heading(numbering: none)[Abkürzungsverzeichnis]
+  print-index(title: "") 
 
   // Main body.
   set page(

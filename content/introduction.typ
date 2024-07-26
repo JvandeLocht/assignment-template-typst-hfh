@@ -1,9 +1,13 @@
 #import "/utils/todo.typ": TODO
+#import "/layout/acronyms.typ": *
+#init-acronyms
 
 = Introduction
 #TODO[
   Introduce the topic of your thesis, e.g. with a little historical overview.
 ]
+Acrostiche is a #acr("WTP")! This #acr("WTP") enables easy acronyms manipulation.
+
 
 == Problem
 #TODO[
