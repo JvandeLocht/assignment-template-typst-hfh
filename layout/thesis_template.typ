@@ -144,5 +144,4 @@
     header: "",
     numbering: none
   )
-  image("/figures/Eigenständigkeitserklärung.svg")
 }
