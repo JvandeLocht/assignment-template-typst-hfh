@@ -23,23 +23,27 @@
 
   
   // --- Cover ---
-  v(1cm)
-  align(center, image("../figures/hfh_logo.jpg", width: 26%))
+  v(8mm)
+  align(right, image("../figures/hfh_logo.png", width: 18%))
 
-  v(5mm)
-  align(center, text(font: sans-font, 2em, weight: 700, "Hamburger Fern-Hochschule"))
+  v(1mm)
+  align(center, text(font: sans-font, 2.5em, weight: 700, "Haaamburger Fern-Hochschule"))
 
-  v(5mm)
-  align(center, text(font: sans-font, 1.5em, weight: 100, "University of applied sciences"))
-  
-  v(15mm)
+  v(8mm)
+  align(center, text(font: sans-font, 2em, weight: 700, "Studiengang: Maschinenbau"))
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Studienzentrum: Essen"))
 
-  align(center, text(font: sans-font, 1.3em, weight: 100, degree + "’s Thesis in " + program))
-  v(15mm)
-  
+  v(8mm)
 
-  align(center, text(font: sans-font, 2em, weight: 700, title))
-  
-  v(10mm)
-  align(center, text(font: sans-font, 2em, weight: 500, author))
+  align(center, text(font: sans-font, 2em, weight: 700, "Komplexe Übung zum Thema:"))
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Thema"))
+
+  v(8mm)
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Modul: Projektmanagement (PRM)"))
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Prüfungskennzeichen: XX00-PRM-PU1"))
+  v(8mm)
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Semester: Herbst 2024"))
+  v(8mm)
+  align(center, text(font: sans-font, 1.5em, weight: 100, "von"))
+  align(center, text(font: sans-font, 1.5em, weight: 100, "Name | xxxxxx"))
 }
