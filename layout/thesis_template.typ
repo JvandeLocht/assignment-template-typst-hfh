@@ -1,10 +1,6 @@
 #import "/layout/cover.typ": *
-#import "/layout/titlepage.typ": *
 #import "/layout/disclaimer.typ": *
-#import "/layout/acknowledgement.typ": acknowledgement as acknowledgement_layout
-#import "/layout/confidential_clause.typ": confidential_clause as confidential_clause_layout
 #import "/layout/transparency_ai_tools.typ": transparency_ai_tools as transparency_ai_tools_layout
-#import "/layout/abstract.typ": *
 #import "/layout/acronyms.typ": *
 #import "/utils/print_page_break.typ": *
 
@@ -37,37 +33,10 @@
 
   pagebreak()
 
-  titlepage(
-    title: title,
-    titleGerman: titleGerman,
-    degree: degree,
-    program: program,
-    supervisor: supervisor,
-    advisors: advisors,
-    author: author,
-    startDate: startDate,
-    submissionDate: submissionDate
-  )
 
   print_page_break(print: is_print, to: "even")
 
-  // disclaimer(
-  //   title: title,
-  //   degree: degree,
-  //   author: author,
-  //   submissionDate: submissionDate
-  // )
-  confidential_clause_layout(confidential_clause)
-
-  // print_page_break(print: is_print)
-  
-  // acknowledgement_layout(acknowledgement)
-
   print_page_break(print: is_print)
-
-  // abstract(lang: "en")[#abstract_en]
-  // abstract(lang: "de")[#abstract_de]
-
 
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
